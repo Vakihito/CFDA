@@ -25,6 +25,4 @@ Each folder has its own set of sripts located in the folder <code>scripts</code>
 
 To run the experiments and train using the method just run <code>make train</code> on the folder that want. This will export the enviroment variables from the .env, and set for training.
 
-### Inference
-
-To run the inference just run the 
+A small data sample is located in the <code>data</code> folder.
