@@ -1,0 +1,8 @@
+pytorch >= 2.2.0
+pandas >= 2.0.3
+tqdm >= 4.66.4
+Pillow >= 9.4.0
+ktrain==0.37.2
+scikit-metrics==0.1.0
+datasets==2.13.0
+sklearn
