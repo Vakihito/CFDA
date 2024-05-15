@@ -7,7 +7,7 @@
 <p align="center">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2rm8544O9PT3YGTLc5ic-upTpAoTN-IVeWOl02o5kFQ&s" alt="Alt text">
 </p>
-<p align="center">Smile a litte</p>
+<p align="center">Smile a little</p>
 
 ## Requeirements
 
