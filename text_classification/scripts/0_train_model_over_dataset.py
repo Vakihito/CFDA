@@ -161,3 +161,4 @@ print(f"## best test epoch {best_epoch}")
 df_test['prediction'] = best_pred
 df_test.to_pickle(save_predictions_all_data)
 best_metrics.to_pickle(save_metrics)
+print(f'saved base metrics at {save_metrics}')
