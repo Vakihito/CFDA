@@ -1,5 +1,5 @@
-ktrain==0.4.2
 transformers==4.37.2
+ktrain==0.4.2
 torch >= 2.0.0
 pandas >= 2.0.3
 tqdm >= 4.66.4
