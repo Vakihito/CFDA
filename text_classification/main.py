@@ -17,3 +17,4 @@ os.system("python3 image_classification/scripts/3_compare_models.py")
 
 os.system("python3 image_classification/scripts/4_get_embeddings_cluster_models.py")
 
+os.system("python3 image_classification/scripts/5_cst.py")
