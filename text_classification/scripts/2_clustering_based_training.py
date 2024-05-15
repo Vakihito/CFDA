@@ -5,7 +5,7 @@ random_state = int(os.environ['random_state'])
 base_parth = os.environ['base_path']
 model_path = os.environ['models_path']
 data_path = os.environ['data_path']
-check_point_dir = f"{model_path}/models_cluster_{os.environ['cluster_number']}"
+check_point_dir = f"{model_path}/tmp_models_cluster_{os.environ['cluster_number']}"
 
 
 data_path_test = os.environ['s2_data_path_test']
