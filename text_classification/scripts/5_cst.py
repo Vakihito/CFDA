@@ -424,3 +424,6 @@ df_fusion_metrics
 
 df_fusion_metrics.to_pickle(results_path)
 df_test.to_pickle(save_predictions)
+from IPython.display import display
+
+display(df_test)
