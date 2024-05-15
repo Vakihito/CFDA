@@ -30,7 +30,10 @@ Each folder has its own set of sripts located in the folder <code>scripts</code>
 
 ### Training
 
-To run the experiments and train using the method just run <code>make train</code> on the folder that want. This will export the enviroment variables from the .env, and set for training.
+To run the experiments and train using the method just run:
+ - <code>make run_text</code> - for performing the experiments for text classification
+ - <code>make run_image</code> - for performing the experiments for image classification
+ - <code>make run_qa</code> - for performing the experiments for question and anwering
 
 A small data sample is located in the <code>data</code> folder.
 
