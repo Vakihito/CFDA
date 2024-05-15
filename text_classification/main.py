@@ -2,12 +2,11 @@ from dotenv import dotenv_values
 import os
 
 # exporting the enviroment variables
-env_vars = dotenv_values(".env")
+base_path = os.environ['base_path']
+env_vars = dotenv_values(f"{base_path}/.env")
 for key, value in env_vars.items():
     os.environ[key] = value
     
-base_path = os.environ['base_path']
-
 os.system(f"python3 {base_path}/scripts/0_train_model_over_dataset.py")
 
 os.system(f"python3 {base_path}/scripts/1_data_clustering.py")
