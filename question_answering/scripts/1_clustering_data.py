@@ -2,6 +2,9 @@ from sklearn.cluster import KMeans
 import pandas as pd
 import os
 from sklearn.model_selection import train_test_split
+print("###############################")
+print("##### Starting notebook 1 #####")
+print("###############################")
 
 read_data_path = os.environ["read_data_path"]
 n_clustes = int(os.environ["n_clusters"])

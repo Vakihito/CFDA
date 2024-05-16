@@ -1,3 +1,6 @@
+print("###############################")
+print("##### Starting notebook 6 #####")
+print("###############################")
 
 from torch.utils.data import DataLoader
 import os
