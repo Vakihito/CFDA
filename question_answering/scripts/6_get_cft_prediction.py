@@ -234,5 +234,3 @@ results = pd.concat([normal_pred, cluster_pred, cst_pred])
 results
 
 results.to_pickle(f"{data_path}/results.pkl")
-
-display(results)
