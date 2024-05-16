@@ -16,7 +16,7 @@ os.system(f"python3 {base_path}/scripts/1_clustering_data.py")
 os.system(f"python3 {base_path}/scripts/2_simple_finetuning.py")
 
 for cur_cluster in range(int(n_clusters)):
-    os.environ['cluster_number'] = str(cur_cluster)
+    os.environ['cluster_subset'] = str(cur_cluster)
     os.system(f"python3 {base_path}/scripts/3_cluster_base_finetuning_cluster.py")
 
 os.system(f"python3 {base_path}/scripts/4_get_ensamble_predictions.py")
