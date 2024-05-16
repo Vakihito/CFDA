@@ -1,5 +1,8 @@
-import os
+print("###############################")
+print("##### Starting notebook 1 #####")
+print("###############################")
 
+import os
 
 random_state = int(os.environ['random_state'])
 base_parth = os.environ['base_path']

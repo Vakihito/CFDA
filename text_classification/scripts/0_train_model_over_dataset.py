@@ -1,3 +1,7 @@
+print("###############################")
+print("##### Starting notebook 0 #####")
+print("###############################")
+
 import os
 
 random_state = int(os.environ['random_state'])
@@ -138,9 +142,6 @@ val_best_metrics.to_pickle(f'{save_metrics[:-4]}_val.pkl')
 ##########################
 ## Get predictions test ##
 ##########################
-print("########################")
-print("##### Test Metrics #####")
-print("########################")
 
 best_f1 = -1
 best_metrics = None

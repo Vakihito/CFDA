@@ -1,3 +1,7 @@
+print("###############################")
+print("##### Starting notebook 3 #####")
+print("###############################")
+
 import os
 
 base_parth = os.environ['base_path']

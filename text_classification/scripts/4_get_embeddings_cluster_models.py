@@ -1,3 +1,7 @@
+print("###############################")
+print("##### Starting notebook 4 #####")
+print("###############################")
+
 import os
 
 number_clusters = int(os.environ['n_clusters'])

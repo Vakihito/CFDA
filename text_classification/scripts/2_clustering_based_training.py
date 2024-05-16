@@ -1,3 +1,7 @@
+print("###############################")
+print("##### Starting notebook 2 #####")
+print("###############################")
+
 import os
 
 cluster_number = int(os.environ['cluster_number'])
