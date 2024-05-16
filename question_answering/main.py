@@ -7,7 +7,7 @@ env_vars = dotenv_values(f"question_answering/.env")
 for key, value in env_vars.items():
     os.environ[key] = value
 
-base_path = os.environ["base_path"]
+base_path = os.environ["main_path"]
 n_clusters = int(os.environ["n_clusters"])
 
 
