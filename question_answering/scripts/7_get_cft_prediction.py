@@ -163,14 +163,6 @@ important_cols = ["context",	"question",	"cluster_labels",
                   "start_pos",	"end_post", "id",
                   "start_prob_all_tokens", "end_prob_all_tokens"]
 
-# generating final_prediction CST
-df_test_preds_cst_multihead_preds = pd.read_pickle(f"{os.environ['read_data_path']}/test_data_with_preds_cst_multihead.pkl")
-df_test_cst_multihead_predictions = get_final_prediction(df_test_preds_cst_multihead_preds, df_test)
-
-# generating final_prediction CST
-df_test_preds_cst_concat_preds = pd.read_pickle(f"{os.environ['read_data_path']}/test_data_with_preds_cst_concat.pkl")
-df_test_cst_concat_predictions = get_final_prediction(df_test_preds_cst_concat_preds, df_test)
-
 # getting the cluster predictions
 list_cluster_preds_test = []
 for cur_cluster in range(n_clusters):
@@ -187,19 +179,13 @@ df_test_base_predictions = get_final_prediction(df_test_base_preds, df_test)
 df_test.sort_values(by='id',inplace=True)
 df_test_base_predictions.sort_values(by='id',inplace=True)
 df_test_cluster_predictions.sort_values(by='id',inplace=True)
-df_test_cst_multihead_predictions.sort_values(by='id',inplace=True)
-df_test_cst_concat_predictions.sort_values(by='id',inplace=True)
 
 
 assert all(df_test_base_predictions['id'].values == df_test['id'].values)
 assert all(df_test_cluster_predictions['id'].values == df_test['id'].values)
-assert all(df_test_cst_multihead_predictions['id'].values == df_test['id'].values)
-assert all(df_test_cst_concat_predictions['id'].values == df_test['id'].values)
 
 df_test_base_predictions.to_pickle(f"{os.environ['read_data_path']}/base_formated_predictions.pkl")
 df_test_cluster_predictions.to_pickle(f"{os.environ['read_data_path']}/cluster_formated_predictions.pkl")
-df_test_cst_multihead_predictions.to_pickle(f"{os.environ['read_data_path']}/multihead_formated_predictions.pkl")
-df_test_cst_concat_predictions.to_pickle(f"{os.environ['read_data_path']}/cst_concat_predictions.pkl")
 
 """# Getting the metrics"""
 
@@ -212,8 +198,6 @@ number_clusters = int(os.environ["n_clusters"])
 
 df_test['base_prediction'] = df_test_base_predictions['reponse_str'].values
 df_test['cluster_prediction'] = df_test_cluster_predictions['reponse_str'].values
-df_test['cst_multihead_prediction'] = df_test_cst_multihead_predictions['reponse_str'].values
-df_test['cst_concat_prediction'] = df_test_cst_concat_predictions['reponse_str'].values
 
 import numpy as np
 import pandas as pd
@@ -222,10 +206,6 @@ from evaluate import load
 squad_metric = load("squad")
 
 def get_metrics_for_df(cur_df, model_name, prediction_col):
-  answers_prediction = cur_df[prediction_col].values
-  answers_reference = cur_df['answers'].values
-
-
   formatted_predictions_squad = [
     {"id": str(k), "prediction_text": v} for k, v in cur_df[['id', prediction_col]].values
   ]
@@ -247,11 +227,12 @@ def get_metrics_for_df(cur_df, model_name, prediction_col):
 
 normal_pred = get_metrics_for_df(df_test, model_name, "base_prediction")
 cluster_pred = get_metrics_for_df(df_test, model_name, "cluster_prediction")
-fusion_pred_multihead = get_metrics_for_df(df_test, model_name, "cst_multihead_prediction")
-fusion_pred_cst = get_metrics_for_df(df_test, model_name,'cst_concat_prediction' )
+cst_pred = pd.read_pickle(f"{read_data_path}/cst_results.pkl")
 
-results = pd.concat([normal_pred, cluster_pred, fusion_pred_multihead, fusion_pred_cst])
+results = pd.concat([normal_pred, cluster_pred, cst_pred])
 
 results
 
 results.to_pickle(f"{data_path}/results.pkl")
+
+display(results)
