@@ -11,14 +11,17 @@
 
 ## Requeirements
 
-- pytorch >= 2.2.0
+- transformers==4.37.2
+- ktrain==0.41.3
+- torch >= 2.0.0
 - pandas >= 2.0.3
-- sklearn
 - tqdm >= 4.66.4
 - Pillow >= 9.4.0
-- ktrain==0.37.2
 - scikit-metrics==0.1.0
 - datasets==2.13.0
+- python-dotenv
+- scikit-learn >= 1.3
+- evaluate==0.2.2
 
 To install requirements, run <code> pip install -r requirements.txt </code>
 
