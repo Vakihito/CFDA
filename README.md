@@ -40,3 +40,8 @@ To run the experiments and train using the method just run:
 
 A small data sample is located in the <code>data</code> folder.
 
+### Examples
+Some examples of how to use the pipeline :
+ - Example on how to use the text classification pipeline : [text notebook](https://colab.research.google.com/drive/1UL1CHFUrbTIhpD3asKJtS9zNw8Cjvg7h?usp=drive_open)
+ - Example on how to use the question answering pipeline : [QA notebook](https://colab.research.google.com/drive/1ffXS3gJRv_YvbQN2YM39aKwNIouaqNFe#scrollTo=AD6R33_RLI6_)
+
