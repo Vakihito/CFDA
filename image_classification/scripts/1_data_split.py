@@ -13,7 +13,7 @@ random.seed(0)
 read_data_path = os.environ["read_data_path"]
 n_clustes = int(os.environ["n_clusters"])
 
-data_path = os.environ["1_data_path"]
+data_path = os.environ["s1_data_path"]
 test_dataset = os.environ["dataset_test"]
 val_dataset =  os.environ["dataset_test"]
 random_state = 0
