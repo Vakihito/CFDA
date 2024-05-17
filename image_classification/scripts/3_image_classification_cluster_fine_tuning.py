@@ -239,7 +239,7 @@ def evaluate_dataset(cur_data_loader):
   print("#" * 20)
   return val_f1[0], y_pred, list_index, y_confidence
 
-best_f1_score = 0
+best_f1_score = -1
 best_predictions = []
 len_dataloader = len(train_dataloader)
 
