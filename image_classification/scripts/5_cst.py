@@ -38,9 +38,6 @@ test_dataset = os.environ["dataset_test"]
 n_clusters = int(os.environ["n_clusters"]) + 1
 output_model_path = os.environ['output_model_path']
 fusion_pacience = int(os.environ['fusion_pacience'])
-
-os.mkdir(output_model_path)
-
 df_test = pd.read_pickle(f"{save_path}/test_data_clustered.pkl")
 df_test = df_test[["dataset", "index","image_name",	"data_path",	"embeddings",	"cluster_labels"]].reset_index(drop=True)
 df_simple = pd.read_pickle(f'{save_path}/simple_predictions.pkl')
