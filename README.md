@@ -50,9 +50,3 @@ Some examples of how to use the pipeline using the sampled data :
  - Example on how to use the image classification pipeline : [Image notebook](https://colab.research.google.com/drive/1OvVzwbU8aMxm5M6ZceauDjZuB3g96bkm#scrollTo=kv8wqZWMTnm_)
 
 
-### Motivation
-
-<p align="center">
-  <img src="https://redefineschool.files.wordpress.com/2017/05/jordan-peterson.png" alt="Alt text">
-</p>
-<p align="center">Smile a little</p>
