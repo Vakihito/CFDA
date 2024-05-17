@@ -31,9 +31,6 @@ n_clusters = int(os.environ["n_clusters"])
 output_model_path = os.environ['output_model_path']
 
 df_test = pd.read_pickle(f"{save_path}/test_data_clustered.pkl")
-df_fusion_multi_head = pd.read_pickle(f'{save_path}/cluster_fusion_predictions_multihead_att.pkl')
-df_fusion_cluster_att = pd.read_pickle(f'{save_path}/cluster_fusion_predictions_cluster_att.pkl')
-df_fusion_simple = pd.read_pickle(f'{save_path}/cluster_fusion_predictions_simple.pkl')
 df_simple = pd.read_pickle(f'{save_path}/simple_predictions.pkl')
 
 list_dfs_cluster = []
@@ -52,10 +49,6 @@ def add_prediction_to_data(cur_df, prediction_type, df_target):
 
 df_test = add_prediction_to_data(df_simple, "simple", df_test)
 df_test = add_prediction_to_data(df_cluster, "cluster", df_test)
-df_test = add_prediction_to_data(df_fusion_multi_head, "fusion_multi_head", df_test)
-df_test = add_prediction_to_data(df_fusion_cluster_att, "fusion_cluster_att", df_test)
-df_test = add_prediction_to_data(df_fusion_simple, "fusion_simple", df_test)
-
 
 from sklearn.metrics import classification_report,confusion_matrix
 from matplotlib import pyplot as plt
@@ -84,12 +77,9 @@ df_test.head(3)
 all_metrics = []
 all_metrics.append(validation_metrics(df_test["sentiment"].values, df_test["simple"].values, "simple"))
 all_metrics.append(validation_metrics(df_test["sentiment"].values, df_test["cluster"].values, "cluster"))
-all_metrics.append(validation_metrics(df_test["sentiment"].values, df_test["fusion_multi_head"].values, "fusion_multi_head"))
-all_metrics.append(validation_metrics(df_test["sentiment"].values, df_test["fusion_cluster_att"].values, "fusion_cluster_att"))
-all_metrics.append(validation_metrics(df_test["sentiment"].values, df_test["fusion_simple"].values, "fusion_simple"))
-
+metrics_cst = pd.read_pickle(f'{save_path}/cluster_fusion_predictions_cluster_att.pkl')
+all_metrics.append(metrics_cst)
 
 all_results = pd.concat(all_metrics)
 display(all_results)
-
 all_results.to_pickle(f"{save_path}/results.pkl")
