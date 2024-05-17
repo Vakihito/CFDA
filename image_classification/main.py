@@ -7,9 +7,13 @@ env_vars = dotenv_values(f"question_answering/.env")
 for key, value in env_vars.items():
     os.environ[key] = value
 
+
 base_path = os.environ["main_path"]
 n_clusters = int(os.environ["n_clusters"])
 
+import zipfile
+with zipfile.ZipFile(f"{base_path}/data/sampled_images.zip","r") as zip_ref:
+    zip_ref.extractall(f"{base_path}/data")
 
 os.system(f"python3 {base_path}/scripts/1_data_split.py")
 
