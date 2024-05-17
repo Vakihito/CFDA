@@ -15,7 +15,7 @@ os.system(f"python3 {base_path}/scripts/1_data_split.py")
 
 os.system(f"python3 {base_path}/scripts/2_image_classification_simple_fine_tuning.py")
 
-os.system(f"python3 {base_path}/scripts/2_5_embedding_extraction_and_cluster.py.py")
+os.system(f"python3 {base_path}/scripts/2_5_embedding_extraction_and_cluster.py")
 
 for cur_cluster in range(int(os.environ["n_clusters"])):
     os.environ['cur_cluster'] = str(cur_cluster)
@@ -23,6 +23,10 @@ for cur_cluster in range(int(os.environ["n_clusters"])):
 
 os.system(f"python3 {base_path}/scripts/4_0_ensamble_prediction.py")
 
+for cur_cluster in range(int(os.environ["n_clusters"]) + 1):
+  os.environ['cur_cluster'] = str(cur_cluster)
+  os.system(f"python {base_path}/scripts/4_embeddig_extraction_cluster.py")
+
 os.system(f"python3 {base_path}/scripts/5_cst.py")
 
-os.system(f"python3 {base_path}/scripts/6_get_cft_prediction.py")
+os.system(f"python3 {base_path}/scripts/6_get_final_metrics.py")
