@@ -1,3 +1,6 @@
+print("###############################")
+print("##### Starting notebook 1 #####")
+print("###############################")
 from IPython.display import display
 from sklearn.cluster import KMeans
 from sklearn.model_selection import train_test_split

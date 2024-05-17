@@ -1,3 +1,6 @@
+print("###############################")
+print("##### Starting notebook 2 #####")
+print("###############################")
 import torch
 import torchvision.transforms as transforms
 import torchvision.models as models
