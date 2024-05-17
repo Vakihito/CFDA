@@ -3,7 +3,7 @@ import os
 
 # exporting the enviroment variables
 
-env_vars = dotenv_values(f"question_answering/.env")
+env_vars = dotenv_values(f"image_classification/.env")
 for key, value in env_vars.items():
     os.environ[key] = value
 
