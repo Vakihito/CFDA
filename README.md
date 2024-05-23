@@ -1,4 +1,4 @@
-# CST - Cluster Fusion Domain Adaptation: Improving Over Cross Domain Tasks
+# CFDA - Cluster Fusion Domain Adaptation: Improving Over Cross Domain Tasks
 
 > Cluster Fusion Domain Adaptation implementation for the paper 'Cluster Fusion Domain Adaptation: Improving Over Cross-Domain Tasks.'
 
